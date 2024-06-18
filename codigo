@@ -1,3 +1,29 @@
 https://jsfiddle.net/duckhxws2/dm5869Lw/1/
 
 pronto
+caso nao de certo esse é o do js
+////////////////////////////////////////////////
+
+var botao = document.querySelector("#registrar")
+botao.addEventListener("click",Pokedex)
+
+var nome_ref = document.querySelector("#nome")
+var tipo_ref = document.querySelector("#tipo");
+var nivel_ref = document.querySelector("#nivel");
+var desc_ref = document.querySelector("#descricao");
+var imagem_ref = document.querySelector("#imagem");
+
+function Pokedex() {
+
+var template = document.querySelector("#modelo")
+var copia = document.importNode(template.content,true)
+  
+  copia.querySelector(".nome_pokemon").textContent = nome_ref.value + ": "
+  copia.querySelector(".tipo_pokemon").textContent = tipo_ref.value
+  copia.querySelector(".nivel_pokemon").textContent = nivel_ref.value + ": "
+  copia.querySelector(".descricao_pokemon").textContent = desc_ref.value
+  copia.querySelector(".pokedex_imagem").src = imagem_ref.value;
+  
+ document.body.appendChild(copia)
+
+}
